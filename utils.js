@@ -4,11 +4,12 @@ function getDiceRollsArr (diceCount) {
     })
 }
 
-
 function getDicePlaceholderHtml(dice) {
     return new Array(dice).fill().map(i => {
        return `<div class="placeholder-dice"></div>`
     }).join('')
 }
 
-export {getDiceRollsArr, getDicePlaceholderHtml}
+const getPercentage = (maximumHealth, remainingHealth) => Math.round(remainingHealth / maximumHealth * 100)
+
+export {getDiceRollsArr, getDicePlaceholderHtml, getPercentage}
